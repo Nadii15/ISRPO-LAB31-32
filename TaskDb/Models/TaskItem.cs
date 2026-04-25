@@ -1,10 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
+using Microsoft.Net.Http.Headers;
 namespace TaskDb.Models;
 
 public class TaskItem {
     public int Id { get; set; }
     public bool IsCompleted { get; set; } = false;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? DueDate{get;set;}
 
     [Required]
     [MaxLength(200)]
